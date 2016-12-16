@@ -11,7 +11,8 @@
     tools:context="com.example.michael.testdeeplink.MainActivity">
 
     <TextView
+        android:id="@+id/deep_info_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product detail!" />
+        android:text="colorful themes in here!!!!!!" />
 </RelativeLayout>

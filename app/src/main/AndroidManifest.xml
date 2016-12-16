@@ -1,28 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.michael.testdeeplink">
+    package="com.apusapps.browser">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name="com.example.michael.testdeeplink.WonderfulApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id_apus_browser"/>
+        <activity android:name="com.example.michael.testdeeplink.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.michael.testdeeplink.DetailActivity">
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
-
-
-
-
+        <activity android:name="com.example.michael.testdeeplink.ThemesActivity">
+            <!--am start -W -a android.intent.action.VIEW -d "facebook://apus.launcher/themes/11" com.example.michael.testdeeplink-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--
+                facebook://apus.launcher/themes/11
+                scheme		facebook deep link
+                host		which app?	 	apus.launcher | apus.clear
+                path		which detail page?	/themes/23 | know/16
+                -->
+                <data android:scheme="facebook"
+                    android:host="apus.launcher"
+                    android:pathPrefix="/themes" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.michael.testdeeplink.GoalsActivity">
+            <!--am start -W -a android.intent.action.VIEW -d "facebook://apus.wonderful/goals/23" com.example.michael-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--facebook://apus.wonderful/goals/23-->
+                <data android:scheme="facebook"
+                    android:host="apus.wonderful"
+                    android:pathPrefix="/goals" />
+            </intent-filter>
         </activity>
     </application>
 

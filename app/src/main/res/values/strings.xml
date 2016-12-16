@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestDeeplink</string>
+    <string name="facebook_app_id_apus_launcher">1855823241318658</string>
+    <string name="facebook_app_id_apus_browser">670411869784955</string>
 </resources>
